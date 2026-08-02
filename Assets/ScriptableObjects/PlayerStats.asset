@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e75781073434a48b3532d64320aa21, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: Assembly-CSharp::Core.DataModels.PlayerStatSO
+  entityID: Unique_ID
+  displayName: Unknown Entity
+  healthStats: {fileID: 11400000, guid: 6f8839da20a94454cac82c9d011424b3, type: 2}
+  movementStats: {fileID: 11400000, guid: 269456ffe8348f94ea76b63adbc24e75, type: 2}
