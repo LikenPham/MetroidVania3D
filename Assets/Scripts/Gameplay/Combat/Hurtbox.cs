@@ -1,4 +1,6 @@
-﻿using Core.Interfaces;
+﻿using Core.DataModels;
+using Core.Interfaces;
+using System;
 using UnityEngine;
 
 namespace Gameplay.Combat
@@ -12,13 +14,14 @@ namespace Gameplay.Combat
             "Kéo component có implement IDamageable vào đây, " +
             "thường là HealthModule trên Enemy Root."
         )]
-        [SerializeField] private MonoBehaviour damageReceiverBehaviour;
+
 
         private IDamageable damageReceiver;
 
         public IDamageable DamageReceiver => damageReceiver;
 
         public bool IsReady => damageReceiver != null;
+        public event Action<HitFeedback> HitReceived;
 
         private void Awake()
         {
@@ -27,8 +30,7 @@ namespace Gameplay.Combat
 
         private void CacheDamageReceiver()
         {
-            damageReceiver =
-                damageReceiverBehaviour as IDamageable;
+            damageReceiver = GetComponent<IDamageable>();
 
             if (damageReceiver != null)
                 return;
@@ -47,7 +49,6 @@ namespace Gameplay.Combat
         public void Setup(IDamageable receiver)
         {
             damageReceiver = receiver;
-            damageReceiverBehaviour = receiver as MonoBehaviour;
 
             enabled = damageReceiver != null;
 

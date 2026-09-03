@@ -1,4 +1,6 @@
-﻿namespace Core.Interfaces
+﻿using Core.DataModels;
+
+namespace Core.Interfaces
 {
     public interface IDamageable
     {

@@ -124,12 +124,8 @@ namespace Gameplay.Combat
                 if (HasAlreadyHit(receiver))
                     continue;
 
-                Vector3 hitPoint =
-                    hitCollider.ClosestPoint(worldCenter);
-
                 DamageInfo damageInfo = new DamageInfo(
                     activeAttackData.Damage,
-                    hitPoint,
                     damageSource.position
                 );
 

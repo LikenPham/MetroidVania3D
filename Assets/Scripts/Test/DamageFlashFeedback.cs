@@ -1,5 +1,5 @@
 using System.Collections;
-using Core.Interfaces;
+using Core.DataModels;
 using Gameplay.Modules;
 using UnityEngine;
 

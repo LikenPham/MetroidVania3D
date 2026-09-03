@@ -1,147 +1,63 @@
-# 3D Metroidvania Game
+# Game Metroidvania 3D
 
-A 3D Metroidvania game with 2D side-view gameplay developed using Unity 6.3 (URP).
+## Giới thiệu
 
-## Overview
+Đây là dự án game thuộc thể loại **Metroidvania**, được phát triển trên nền tảng **Unity** với góc nhìn side-view 2D trong môi trường 3D.
 
-This project is a university graduation project focused on designing and implementing a modular architecture for a Metroidvania game.
+Người chơi sẽ khám phá một thế giới liên kết với nhiều khu vực, chiến đấu với kẻ địch, thu thập và mở khóa các khả năng mới. Những khả năng này cho phép người chơi tiếp cận các khu vực trước đó chưa thể đến, từ đó tiếp tục khám phá và phát triển nhân vật.
 
-The game features:
-
-- Character movement
-- Jump / Double Jump
-- Dash
-- Wall Jump
-- Melee Combat
-- Enemy AI
-- Save System
-- Modular Character System
-- Object Pooling
-- Event-driven Architecture
+Dự án tập trung vào việc xây dựng trải nghiệm **khám phá, chiến đấu, tương tác với môi trường và phát triển nhân vật**, đồng thời áp dụng kiến trúc phần mềm có khả năng mở rộng và bảo trì.
 
 ---
 
-## Engine
+## Tính năng chính
 
-- Unity 6.3
-- Universal Render Pipeline (URP)
-- C#
-
----
-
-## Project Architecture
-
-```
-Assets
-│
-├── Core
-│   ├── Data
-│   ├── Events
-│   ├── Interfaces
-│   ├── Managers
-│   ├── ScriptableObjects
-│   └── Utilities
-│
-├── Gameplay
-│   ├── Character
-│   ├── Enemy
-│   ├── Combat
-│   ├── Camera
-│   ├── Interaction
-│   └── Environment
-│
-├── UI
-│
-├── Art
-│
-└── Audio
-```
-
-Architecture principles:
-
-- Dependency Injection
-- ScriptableObject Data
-- Event Bus
-- State Machine
-- Object Pooling
-- SOLID
-- Low Coupling / High Cohesion
+- Khám phá thế giới với các khu vực được liên kết với nhau.
+- Di chuyển và vượt chướng ngại vật trong môi trường.
+- Chiến đấu với nhiều loại kẻ địch.
+- Sử dụng các kỹ năng và khả năng đặc biệt.
+- Mở khóa khả năng mới để tiếp cận những khu vực chưa thể khám phá.
+- Tương tác với môi trường và các đối tượng trong game.
+- Hệ thống camera phù hợp với gameplay side-view 2D trong môi trường 3D.
+- Hệ thống nhân vật và gameplay được thiết kế theo hướng module hóa.
 
 ---
 
-## Controls
+## Công nghệ sử dụng
 
-| Action | Key |
-|---------|-----|
-| Move | A / D |
-| Jump | Space |
-| Dash | Left Shift |
-| Attack | Left Mouse |
-| Skill | Right Mouse |
-
----
-
-## Requirements
-
-Unity Version
-
-```
-Unity 6.3
-```
-
-Render Pipeline
-
-```
-Universal Render Pipeline (URP)
-```
+- **Unity 6.3**
+- **Universal Render Pipeline (URP)**
+- **C#**
+- **Unity Input System**
+- **Git**
+- **Git LFS**
 
 ---
 
-## Getting Started
+## Kiến trúc dự án
 
-Clone repository
+Dự án được xây dựng theo hướng **module hóa**, trong đó các chức năng gameplay được chia thành những hệ thống riêng biệt nhằm giảm sự phụ thuộc giữa các thành phần và giúp việc mở rộng dự án dễ dàng hơn.
 
-```bash
-git clone https://github.com/yourname/Metroidvania3D.git
-```
+Một số phương pháp được áp dụng:
 
-Open with Unity Hub.
-
-Open the project using Unity 6.3.
-
-Open scene:
-
-```
-Assets/Scenes/Main.unity
-```
-
-Press Play.
+- **State Machine** – quản lý các trạng thái và hành vi của nhân vật.
+- **ScriptableObject** – quản lý và lưu trữ dữ liệu gameplay.
+- **Event-driven Architecture** – giao tiếp giữa các hệ thống thông qua sự kiện.
+- **Dependency Injection** – truyền các đối tượng cần thiết trực tiếp khi khởi tạo.
+- **Object Pooling** – tái sử dụng các đối tượng được tạo và hủy thường xuyên.
+- **Interface-based Design** – giảm sự phụ thuộc trực tiếp giữa các module.
+- **Caching** – hạn chế việc tìm kiếm Component lặp lại trong quá trình gameplay.
+- **Tối ưu Physics Query** – sử dụng các phương pháp truy vấn vật lý phù hợp để giảm cấp phát bộ nhớ.
 
 ---
 
-## Current Progress
+## Cấu trúc dự án
 
-- [x] Player Movement
-- [x] Camera Follow
-- [x] Ground Detection
-- [x] Wall Detection
-- [x] Jump
-- [x] Dash
-- [x] Character State Machine
-- [ ] Enemy AI
-- [ ] Boss System
-- [ ] Save System
-- [ ] Inventory
-- [ ] Skill Tree
-
----
-
-## Screenshots
-
-Coming Soon
-
----
-
-## License
-
-This project is for educational purposes.
+```text
+Assets/
+├── Core/
+├── Gameplay/
+├── UI/
+├── Art/
+├── Audio/
+└── Scenes/
