@@ -2,7 +2,7 @@
 using Gameplay.Combat;
 using UnityEngine;
 
-namespace Core.FeedbackVFX
+namespace Core.Feedback
 {
     [DisallowMultipleComponent]
     public sealed class HitVFXController : MonoBehaviour
@@ -12,5 +12,15 @@ namespace Core.FeedbackVFX
 
         [Header("VFX")]
         [SerializeField] private string hitVfxPoolKey = "HitVFX";
+
+        private void Awake()
+        {
+            hurtbox.HitReceived += HandleHitFeedback;
+        }
+
+        private void HandleHitFeedback(HitFeedback feedback)
+        {
+            // Xử lý VFX + Sound
+        }
     }
 }

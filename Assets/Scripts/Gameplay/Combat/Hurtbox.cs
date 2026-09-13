@@ -15,12 +15,12 @@ namespace Gameplay.Combat
             "thường là HealthModule trên Enemy Root."
         )]
 
-
         private IDamageable damageReceiver;
 
         public IDamageable DamageReceiver => damageReceiver;
 
         public bool IsReady => damageReceiver != null;
+
         public event Action<HitFeedback> HitReceived;
 
         private void Awake()
@@ -68,6 +68,11 @@ namespace Gameplay.Combat
 
             damageReceiver.TakeDamage(damageInfo);
             return true;
+        }
+
+        public void SendHitFeedback(HitFeedback feedback)
+        {
+            HitReceived?.Invoke(feedback);
         }
     }
 }

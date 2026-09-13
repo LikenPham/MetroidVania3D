@@ -18,7 +18,7 @@ namespace Gameplay.Modules
         [SerializeField] private bool broadcastEnemyDefeatedEvent = true;
         [SerializeField] private bool deactivateOnDeath = true;
 
-        [Header("Visual/Audio Feedback (For Designer)")]
+        [Header("Visual/Audio Feedback")]
         [SerializeField] private UnityEvent OnTakeDamage;
         [SerializeField] private UnityEvent OnZeroHealth;
 
@@ -36,7 +36,6 @@ namespace Gameplay.Modules
         public bool IsSetupComplete => isSetupComplete;
 
         public event Action<DamageInfo> Damaged;
-        public event Action<HitFeedback> HitFeedbackReceived;
         public event Action<int, int> HealthChanged;
         public event Action Dead;
         private void Start()
