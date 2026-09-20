@@ -63,11 +63,7 @@ namespace Gameplay.Combat
 
         public bool TryReceiveHit(DamageInfo damageInfo)
         {
-            if (damageReceiver == null)
-                return false;
-
-            damageReceiver.TakeDamage(damageInfo);
-            return true;
+            return damageReceiver != null && damageReceiver.TakeDamage(damageInfo);
         }
 
         public void SendHitFeedback(HitFeedback feedback)

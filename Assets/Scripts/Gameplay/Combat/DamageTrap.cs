@@ -36,7 +36,20 @@ namespace Gameplay.Combat
 
             DamageInfo damageInfo = new DamageInfo(damageAmount, transform.position);
 
-            hurtbox.TryReceiveHit(damageInfo);
+            bool damaged = hurtbox.TryReceiveHit(damageInfo);
+
+            if (!damaged)
+                return;
+
+            Vector3 hitPoint = other.ClosestPoint(transform.position);
+            Vector3 direction = (hitPoint - transform.position).normalized;
+
+            HitFeedback feedback = new HitFeedback(
+                hitPoint,
+                direction
+            );
+
+            hurtbox.SendHitFeedback(feedback);
         }
     }
 }

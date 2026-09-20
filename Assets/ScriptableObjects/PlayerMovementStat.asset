@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: PlayerMovementStat
   m_EditorClassIdentifier: Assembly-CSharp::Core.DataModels.MovementStatSO
   moveSpeed: 5
-  jumpForce: 8
+  jumpForce: 6
   airControlMultiplier: 0.8
+  coyoteTime: 0.12
+  jumpBufferTime: 0.12
+  jumpCutMultiplier: 0.2
