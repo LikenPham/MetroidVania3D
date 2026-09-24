@@ -15,6 +15,7 @@ namespace Gameplay.StateMachine
         [SerializeField] private EntityAnimDataSO animData;
         [SerializeField] private MonoBehaviour moveModuleBehaviour;
         [SerializeField] private AttackDataSO basicAttackData;
+        [SerializeField] private PlayerAnchorSO playerAnchor;
 
         // ==========================================
         // CÁC MODULE (TAY CHÂN) - Getter public để các State dễ dàng gọi tới
@@ -43,6 +44,8 @@ namespace Gameplay.StateMachine
         {
             // 1. Caching Modules (Quy tắc 4)
             MoveModule = moveModuleBehaviour as IMoveModule;
+
+            playerAnchor.SetPlayer(transform);
 
             if (MoveModule == null)
             {

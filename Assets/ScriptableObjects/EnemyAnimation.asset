@@ -17,3 +17,5 @@ MonoBehaviour:
     AnimStateName: run
   - ActionKey: 1
     AnimStateName: idle
+  - ActionKey: 7
+    AnimStateName: attack01

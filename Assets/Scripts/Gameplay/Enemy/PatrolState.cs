@@ -17,6 +17,8 @@ namespace Gameplay.Enemy
         private readonly int runAnimationHash;
         private readonly AnimationModule animation;
 
+        public bool HasReachedPoint { get; private set; }
+
         public bool IsMovingRight => movingRight;
 
         public PatrolState(
@@ -47,7 +49,7 @@ namespace Gameplay.Enemy
 
         public void Enter()
         {
-            movingRight = true;
+            HasReachedPoint = false;
 
             animation.PlayAnimation(runAnimationHash);
         }
@@ -58,14 +60,16 @@ namespace Gameplay.Enemy
             {
                 if (enemyTransform.position.x >= pointB.position.x)
                 {
-                    movingRight = false;
+                    HasReachedPoint = true;
+                    return;
                 }
             }
             else
             {
                 if (enemyTransform.position.x <= pointA.position.x)
                 {
-                    movingRight = true;
+                    HasReachedPoint = true;
+                    return;
                 }
             }
 
@@ -79,6 +83,10 @@ namespace Gameplay.Enemy
 
         public void Exit()
         {
+            if (HasReachedPoint)
+            {
+                movingRight = !movingRight;
+            }
         }
     }
 }

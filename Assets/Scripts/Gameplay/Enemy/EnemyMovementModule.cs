@@ -12,6 +12,7 @@ namespace Gameplay.Enemy
         [SerializeField] private float rightFacingAngle = 90f;
         [SerializeField] private float leftFacingAngle = -90f;
 
+        public bool IsFacingRight { get; private set; }
         private void Awake()
         {
             if (visualRoot == null)
@@ -31,11 +32,15 @@ namespace Gameplay.Enemy
         {
             if (direction.x > 0f)
             {
+                IsFacingRight = true;
+
                 visualRoot.rotation =
                     Quaternion.Euler(0f, rightFacingAngle, 0f);
             }
             else if (direction.x < 0f)
             {
+                IsFacingRight = false;
+
                 visualRoot.rotation =
                     Quaternion.Euler(0f, leftFacingAngle, 0f);
             }

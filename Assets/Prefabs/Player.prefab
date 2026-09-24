@@ -91,6 +91,7 @@ MonoBehaviour:
   animData: {fileID: 11400000, guid: 3878ccb378683bc4a9da2e0595de6141, type: 2}
   moveModuleBehaviour: {fileID: 1660140263867938370}
   basicAttackData: {fileID: 11400000, guid: f2acb4f387679004a86251d132085b4c, type: 2}
+  playerAnchor: {fileID: 11400000, guid: defb6c5eb2986204b82fb7d3b0b61dc3, type: 2}
 --- !u!114 &3608790818350471679
 MonoBehaviour:
   m_ObjectHideFlags: 0

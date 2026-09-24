@@ -210,7 +210,7 @@ namespace Gameplay.Combat
                 Quaternion.Euler(localEulerAngles);
         }
 
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
             AttackDataSO dataToDraw =
                 Application.isPlaying && activeAttackData != null
